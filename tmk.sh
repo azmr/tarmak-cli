@@ -90,11 +90,12 @@ baseMap=uk
 baseMapFile="$baseMap.map.gz"
 template=$(find $kmdir -name "$baseMapFile")
 
+# TODO: make default file/dir in prompt
 templateConfirmation(){
-	read -p "Using $template as template - is this correct? (y/n): " confirm
+	read -p "Using $template as template - is this ok? (y/n): " confirm
 	case "$confirm" in
 		y|Y|[Yy][Ee][Ss] ) echo "Confirmed. Continuing...";;
-		* ) read -p "Not confirmed. Enter a different file to continue or press ^C (CTRL+C) to cancel:$n> " template; templateConfirmation;;
+		* ) read -p "Not confirmed. Enter a file to use or press ^C (CTRL+C) to cancel:$n> " template; templateConfirmation;;
 	esac
 }
 templateConfirmation
@@ -103,10 +104,10 @@ oldPwd=$(pwd)
 targetDir="$(cd ${template/$baseMapFile/""}/.. && pwd)/colemak"
 cd $oldPwd
 targetConfirmation(){
-	read -p "Target directory for new keymaps is $targetDir - is this correct? (y/n): " confirm
+	read -p "Target for new keymaps is $targetDir - is this ok? (y/n): " confirm
 	case "$confirm" in
 		y|Y|[Yy][Ee][Ss] ) echo "Confirmed. Continuing...";;
-		* ) read -p "Not confirmed. Enter a different directory to continue or press ^C (CTRL+C) to cancel:$n> " targetDir; targetConfirmation;;
+		* ) read -p "Not confirmed. Enter a directory to use or press ^C (CTRL+C) to cancel:$n> " targetDir; targetConfirmation;;
 	esac
 }
 targetConfirmation
