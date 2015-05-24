@@ -4,9 +4,9 @@
 # for convenient newlines
 n="
 "
-tmk1="\n
+tmk=("\n
 ##############\n
-# Tarmak  1  #\n
+# Tarmak  1\n
 ##############\n
 \n
 # Top Row:\n
@@ -18,10 +18,9 @@ keycode 37 = e\n
 keycode 49 = k\n
 \n
 ##############"
-
-tmk2="\n
+"\n
 ##############\n
-# Tarmak  2  #\n
+# Tarmak  2\n
 ##############\n
 \n
 # Top Row:\n
@@ -36,9 +35,9 @@ keycode 37 = e\n
 keycode 49 = k\n
 \n
 ##############"
-tmk3="\n
+"\n
 ##############\n
-# Tarmak 3   #\n
+# Tarmak 3\n
 ##############\n
 \n
 # Top Row:\n
@@ -56,9 +55,9 @@ keycode 37 = e\n
 keycode 49 = k\n
 \n
 ##############"
-tmk4="\n
+"\n
 ######################\n
-# Tarmak 4           #\n
+# Tarmak 4\n
 ######################\n
 \n
 # Top Row:\n
@@ -79,7 +78,7 @@ keycode 39 = o\n
 # Bottom Row:\n
 keycode 49 = k\n
 \n
-######################"
+######################")
 
 kmdir="/usr/share/kbd/keymaps"
 
@@ -112,20 +111,13 @@ targetConfirmation(){
 }
 targetConfirmation
 
-for i in {1..4}
+for i in ${!tmk[@]}
 do
-	cp -i $template "$targetDir/tarmak$i.map.gz"
-	gunzip "$targetDir/tarmak$i.map.gz"
-done
-
-echo -e $tmk1 >> "$targetDir/tarmak1.map"
-echo -e $tmk2 >> "$targetDir/tarmak2.map"
-echo -e $tmk3 >> "$targetDir/tarmak3.map"
-echo -e $tmk4 >> "$targetDir/tarmak4.map"
-
-for i in {1..4}
-do
-	gzip "$targetDir/tarmak$i.map"
+	((j=$i+1))
+	cp -i $template "$targetDir/tarmak$j.map.gz"
+	gunzip "$targetDir/tarmak$j.map.gz"
+	echo -e ${tmk[$i]} >> "$targetDir/tarmak$j.map"
+	gzip "$targetDir/tarmak$j.map"
 done
 
 ## tell user how to apply kmp
