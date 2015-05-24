@@ -85,19 +85,31 @@ kmdir="/usr/share/kbd/keymaps"
 
 # take input from user
 ## if ___ make keymaps in /usr/share/kbd/keymaps/
-basemap=uk
+baseMap=uk
 # TODO: work out from vconsole
-template=$(find $kmdir -name "$basemap.map.gz")
+baseMapFile="$baseMap.map.gz"
+template=$(find $kmdir -name "$baseMapFile")
 
-confirmation(){
+templateConfirmation(){
 	read -p "Using $template as template - is this correct? (y/n): " confirm
 	case "$confirm" in
 		y|Y|[Yy][Ee][Ss] ) echo "Confirmed. Continuing...";;
-		* ) read -p "Not confirmed. Enter a different file to continue or press ^C (CTRL+C) to cancel:$n> " template; confirmation;; esac
+		* ) read -p "Not confirmed. Enter a different file to continue or press ^C (CTRL+C) to cancel:$n> " template; templateConfirmation;;
+	esac
 }
-confirmation
+templateConfirmation
 
-###if n, enter file to use as template:
+oldPwd=$(pwd)
+targetDir="$(cd ${template/$baseMapFile/""}/.. && pwd)/colemak"
+cd $oldPwd
+targetConfirmation(){
+	read -p "Target directory for new keymaps is $targetDir - is this correct? (y/n): " confirm
+	case "$confirm" in
+		y|Y|[Yy][Ee][Ss] ) echo "Confirmed. Continuing...";;
+		* ) read -p "Not confirmed. Enter a different directory to continue or press ^C (CTRL+C) to cancel:$n> " targetDir; targetConfirmation;;
+	esac
+}
+targetConfirmation
 
 ## tell user how to apply kmp
 
