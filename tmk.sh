@@ -120,6 +120,7 @@ do
 	gzip "$targetDir/tarmak$j.map"
 done
 
+echo "All done! Now use \"sudo loadkeys tarmak\$\" (replace \"\$\" with 1-4) to load one of the new keymaps."
 ## tell user how to apply kmp
 
 ## if ___ show current kmp 
