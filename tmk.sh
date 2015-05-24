@@ -1,6 +1,10 @@
+#!/bin/bash
 # Vars
 # helpText =
-tmk1 = "
+# for convenient newlines
+n="
+"
+tmk1="
 ##############
 # Tarmak  1  #
 ##############
@@ -15,7 +19,7 @@ keycode 49 = k
 
 ##############"
 
-tmk2 = "
+tmk2="
 ##############
 # Tarmak  2  #
 ##############
@@ -32,7 +36,7 @@ keycode 37 = e
 keycode 49 = k
 
 ##############"
-tmk3 = "
+tmk3="
 ##############
 # Tarmak 3   #
 ##############
@@ -52,7 +56,7 @@ keycode 37 = e
 keycode 49 = k
 
 ##############"
-tmk4 = "
+tmk4="
 ######################
 # Tarmak 4           #
 ######################
@@ -77,9 +81,21 @@ keycode 49 = k
 
 ######################"
 
+kmdir="/usr/share/kbd/keymaps"
 
 # take input from user
 ## if ___ make keymaps in /usr/share/kbd/keymaps/
+basemap=uk
+# TODO: work out from vconsole
+template=$(find $kmdir -name "$basemap.map.gz")
+
+confirmation(){
+	read -p "Using $template as template - is this correct? (y/n): " confirm
+	case "$confirm" in
+		y|Y|[Yy][Ee][Ss] ) echo "Confirmed. Continuing...";;
+		* ) read -p "Not confirmed. Enter a different file to continue or press ^C (CTRL+C) to cancel:$n> " template; confirmation;; esac
+}
+confirmation
 
 ###if n, enter file to use as template:
 
@@ -90,3 +106,4 @@ keycode 49 = k
 ## if __$ show tarmak$ kmp
 
 ## if -h show help
+
