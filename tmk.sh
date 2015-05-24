@@ -4,81 +4,81 @@
 # for convenient newlines
 n="
 "
-tmk1="
-##############
-# Tarmak  1  #
-##############
-
-# Top Row:
-keycode 18 = j
-# Middle Row: 
-keycode 36 = n
-keycode 37 = e
-# Bottom Row:
-keycode 49 = k
-
+tmk1="\n
+##############\n
+# Tarmak  1  #\n
+##############\n
+\n
+# Top Row:\n
+keycode 18 = j\n
+# Middle Row:\n
+keycode 36 = n\n
+keycode 37 = e\n
+# Bottom Row:\n
+keycode 49 = k\n
+\n
 ##############"
 
-tmk2="
-##############
-# Tarmak  2  #
-##############
-
-# Top Row:
-keycode 18 = f
-keycode 20 = g
-# Middle Row:
-keycode 33 = t
-keycode 34 = j
-keycode 36 = n
-keycode 37 = e
-# Bottom Row:
-keycode 49 = k
-
+tmk2="\n
+##############\n
+# Tarmak  2  #\n
+##############\n
+\n
+# Top Row:\n
+keycode 18 = f\n
+keycode 20 = g\n
+# Middle Row:\n
+keycode 33 = t\n
+keycode 34 = j\n
+keycode 36 = n\n
+keycode 37 = e\n
+# Bottom Row:\n
+keycode 49 = k\n
+\n
 ##############"
-tmk3="
-##############
-# Tarmak 3   #
-##############
-
-# Top Row:
-keycode 18 = f
-keycode 19 = j
-keycode 20 = g
-# Middle Row:
-keycode 31 = r
-keycode 32 = s
-keycode 33 = t
-keycode 34 = d
-keycode 36 = n
-keycode 37 = e
-# Bottom Row:
-keycode 49 = k
-
+tmk3="\n
+##############\n
+# Tarmak 3   #\n
+##############\n
+\n
+# Top Row:\n
+keycode 18 = f\n
+keycode 19 = j\n
+keycode 20 = g\n
+# Middle Row:\n
+keycode 31 = r\n
+keycode 32 = s\n
+keycode 33 = t\n
+keycode 34 = d\n
+keycode 36 = n\n
+keycode 37 = e\n
+# Bottom Row:\n
+keycode 49 = k\n
+\n
 ##############"
-tmk4="
-######################
-# Tarmak 4           #
-######################
-
-# Top Row:
-keycode 18 = f
-keycode 19 = p
-keycode 20 = g
-keycode 21 = j
-keycode 24 = y
-keycode 25 = semicolon
-# Middle Row:
-keycode 31 = r
-keycode 32 = s
-keycode 33 = t
-keycode 34 = d
-keycode 36 = n
-keycode 37 = e
-keycode 39 = o
-# Bottom Row:
-keycode 49 = k
-
+tmk4="\n
+######################\n
+# Tarmak 4           #\n
+######################\n
+\n
+# Top Row:\n
+keycode 18 = f\n
+keycode 19 = p\n
+keycode 20 = g\n
+keycode 21 = j\n
+keycode 24 = y\n
+keycode 25 = semicolon\n
+# Middle Row:\n
+keycode 31 = r\n
+keycode 32 = s\n
+keycode 33 = t\n
+keycode 34 = d\n
+keycode 36 = n\n
+keycode 37 = e\n
+keycode 39 = o\n
+# Bottom Row:\n
+keycode 49 = k\n
+\n
 ######################"
 
 kmdir="/usr/share/kbd/keymaps"
@@ -110,6 +110,22 @@ targetConfirmation(){
 	esac
 }
 targetConfirmation
+
+for i in {1..4}
+do
+	cp -i $template "$targetDir/tarmak$i.map.gz"
+	gunzip "$targetDir/tarmak$i.map.gz"
+done
+
+echo -e $tmk1 >> "$targetDir/tarmak1.map"
+echo -e $tmk2 >> "$targetDir/tarmak2.map"
+echo -e $tmk3 >> "$targetDir/tarmak3.map"
+echo -e $tmk4 >> "$targetDir/tarmak4.map"
+
+for i in {1..4}
+do
+	gzip "$targetDir/tarmak$i.map"
+done
 
 ## tell user how to apply kmp
 
