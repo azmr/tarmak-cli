@@ -1,9 +1,4 @@
 #!/bin/bash
-# Vars
-# helpText =
-# for convenient newlines
-n="
-"
 tmk=("\n
 ##############\n
 # Tarmak  1\n
@@ -80,20 +75,14 @@ keycode 49 = k\n
 \n
 ######################")
 
-kmdir="/usr/share/kbd/keymaps"
-
-# take input from user
-## if ___ make keymaps in /usr/share/kbd/keymaps/
 baseMap=$(cat /etc/vconsole.conf | grep -oPi "(?<=keymap=)\S+")
 if [ -z "$baseMap" ]
 	then
 		baseMap="us"
 fi
 
-echo "baseMap: $baseMap"
-# TODO: work out from vconsole
 baseMapFile="$baseMap.map.gz"
-template=$(find $kmdir -name "$baseMapFile")
+template=$(find /usr/share/kbd/keymaps -name "$baseMapFile")
 
 # TODO: make default file/dir in prompt
 templateConfirmation(){
@@ -108,6 +97,8 @@ templateConfirmation
 oldPwd=$(pwd)
 targetDir="$(cd ${template/$baseMapFile/""}/.. && pwd)/colemak"
 cd $oldPwd
+n="
+"
 targetConfirmation(){
 	read -p "Target for new keymaps is $targetDir - is this ok? (y/n): " confirm
 	case "$confirm" in
@@ -127,11 +118,3 @@ do
 done
 
 echo "All done! Now use \"sudo loadkeys tarmak\$\" (replace \"\$\" with 1-4) to load one of the new keymaps."
-## tell user how to apply kmp
-
-## if ___ show current kmp 
-
-## if __$ show tarmak$ kmp
-
-## if -h show help
-
