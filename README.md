@@ -1,4 +1,4 @@
-# Tarmak CLI
+# Tarmak for CLI
 A shell script for creating the intermediate key layouts used for learning Colemak on CLI terminals.
 
 Only the letter keys and (semi-)colon are moved, so all your other keys will stay the same as they are on your current/preferred keymap.
