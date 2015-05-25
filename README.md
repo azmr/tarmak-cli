@@ -9,7 +9,7 @@ Only the letter keys and (semi-)colon are moved, so all your other keys will sta
  - that you have root access to
 
 ## Quick Start
-Download the files with **`$ git clone https://github.com/azmr/tarmak.git`** or make a new file using the script at https://github.com/azmr/tarmak/blob/master/tmk.sh 
+Download the files with **`$ git clone https://github.com/azmr/tarmak.git`**, or as a .zip file from the side of the GitHub page. Alternatively, make a new file using the script at https://github.com/azmr/tarmak/blob/master/tmk.sh.
 
 Run the script using **`$ sudo bash tmk.sh`** and follow the prompts.
 The defaults worked out from your system should be appropriate, but if they aren't, you can enter your preferred map file and destination.
