@@ -19,7 +19,7 @@ To use one of the layouts until you turn off the computer, enter **`$ sudo loadk
 To set the layout in a persistent way, enter **`$ sudo localectl set-keymap tarmakX`**. *Caution: the new keymap will be active when you input your password, so make sure you can type with it!
 
 ## Brief introduction to Tarmak
-*For a more complete explanation, please see this [forum post](http://forum.colemak.com/viewtopic.php?id=1858 "Learn Colemak in steps with the Tarmak layouts!") in the Colemak forums.*
+*For a more complete explanation, please see this [post](http://forum.colemak.com/viewtopic.php?id=1858 "Learn Colemak in steps with the Tarmak layouts!") in the Colemak forums.*
 
 As you've found your way here, you probably already know a little about Tarmak, but just in case...
 
