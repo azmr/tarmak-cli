@@ -84,7 +84,13 @@ kmdir="/usr/share/kbd/keymaps"
 
 # take input from user
 ## if ___ make keymaps in /usr/share/kbd/keymaps/
-baseMap=uk
+baseMap=$(cat /etc/vconsole.conf | grep -oPi "(?<=keymap=)\S+")
+if [ -z "$baseMap" ]
+	then
+		baseMap="us"
+fi
+
+echo "baseMap: $baseMap"
 # TODO: work out from vconsole
 baseMapFile="$baseMap.map.gz"
 template=$(find $kmdir -name "$baseMapFile")
