@@ -79,6 +79,8 @@ q w f p g j L U y ;
   z c v b k m
 ```
 
+To find these again while using the CLI, enter **`$ cat steps.txt`** while in the tarmak-cli directory.
+
 ## Manual Setup
 1. Determine your current keymap using **`$ localectl status`** or from `/etc/vconsole.conf`
 2. Find the file for that/your preferred keymap (in `/usr/share/kbd/keymaps/` for Linux and `/usr/share/syscons/keymaps/` for BSD)
