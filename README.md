@@ -4,9 +4,9 @@ A shell script for creating the intermediate key layouts used for learning Colem
 Only the letter keys and (semi-)colon are moved, so all your other keys will stay the same as they are on your current/preferred keymap.
 
 ## Prerequisites
- - a UNIX (Linux, BSD, Mac...) box...
+ - a UNIX (Linux, BSD, Mac(?)) box...
  - running from a CLI terminal...
- - that you have root access to
+ - that you have root access to.
 
 ## Quick Start
 Download the files with **`$ git clone https://github.com/azmr/tarmak.git`**, or as a .zip file from the side of the GitHub page. Alternatively, make a new file using the script at https://github.com/azmr/tarmak/blob/master/tmk.sh.
@@ -31,6 +31,54 @@ To make the jump less drastic, Colemak forum member DreymaR created multiple int
 
 These intermediate steps are collectively called Tarmak.
 
+## Key Layout Steps
+The progression followed by the keymaps is called ETROI (see the above forum post for more details), the steps for which are shown below - comments are from DreymaR. The following are in text format for people reading on a text-only CLI browser; for nicer images, see the forum post above.
+
+###tarmak1 (E)
+>*The (J)>__E__>K>N 'most essential' loop*
+
+```
+q w J r t y u i o p
+ a s d t g h N E l ;
+  z x c v b K m
+```
+
+###tarmak2 (T)
+>*The (J)>G>__T__>F loop, bringing the important T into place*
+
+```
+q w F r G y u i o p
+ a s d T J h n e l ;
+  z x c v b k m
+```
+
+###tarmak3 (R)
+>*The (J)>__R__>S>D loop, getting RSD into place – all of which are relatively frequent!*
+
+```
+q w f J g y u i o p
+ a R S t D h n e l ;
+  z x c v b k m
+```
+
+###tarmak4 (O)
+>*The J>Y>__O__>;>P loop, getting O in place and finalizing the big loop*
+
+```
+q w f P g J u i Y ;
+ a r s t d h n e l O
+  z x c v b k m
+```
+
+###colemak (I)
+>"The L>U>I self-contained loop - step 5 is simply the full Colemak!"
+
+```
+q w f p g j L U y ;
+ a r s t d h n e I o
+  z c v b k m
+```
+
 ## Manual Setup
 1. Determine your current keymap using **`$ localectl status`** or from `/etc/vconsole.conf`
 2. Find the file for that/your preferred keymap (in `/usr/share/kbd/keymaps/` for Linux and `/usr/share/syscons/keymaps/` for BSD)
@@ -39,7 +87,6 @@ These intermediate steps are collectively called Tarmak.
 5. Append the appropriate key changes to each file. These can be copied and pasted from https://github.com/azmr/tarmak/blob/master/keychanges.txt.
 6. Rezip all the maps using **`$ sudo gzip tarmak*`**
 7. Set the new layout with **`$ sudo loadkeys tarmakX`** or **`$ sudo localectl set-keymap tarmakX`**.
-
 
 ## Disclaimer
 This script should work on most hardware running UNIX, and certainly shouldn't do any damage, but has only been tested at a very small scale.
