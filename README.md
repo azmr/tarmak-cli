@@ -71,7 +71,7 @@ q w f P g J u i Y ;
 ```
 
 ###colemak (I)
->"The L>U>I self-contained loop - step 5 is simply the full Colemak!"
+>The L>U>I self-contained loop - step 5 is simply the full Colemak!
 
 ```
 q w f p g j L U y ;
