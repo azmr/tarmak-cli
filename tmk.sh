@@ -61,7 +61,7 @@ keycode 19 = p\n
 keycode 20 = g\n
 keycode 21 = j\n
 keycode 24 = y\n
-keycode 25 = semicolon\n
+keycode 25 = semicolon colon\n
 # Middle Row:\n
 keycode 31 = r\n
 keycode 32 = s\n
