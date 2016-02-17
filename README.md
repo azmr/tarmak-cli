@@ -35,7 +35,7 @@ These intermediate steps are collectively called Tarmak.
 The progression followed by the keymaps is called ETROI (see the above forum post for more details), the steps for which are shown below - comments are from DreymaR. The following are in text format for people reading on a text-only CLI browser; for nicer images, see the forum post above.
 
 ###tarmak1 (E)
->*The (J)>__E__>K>N 'most essential' loop*
+>The (J)>__E__>K>N 'most essential' loop
 
 ```
 q w J r t y u i o p
@@ -44,7 +44,7 @@ q w J r t y u i o p
 ```
 
 ###tarmak2 (T)
->*The (J)>G>__T__>F loop, bringing the important T into place*
+>The (J)>G>__T__>F loop, bringing the important T into place
 
 ```
 q w F r G y u i o p
@@ -53,7 +53,7 @@ q w F r G y u i o p
 ```
 
 ###tarmak3 (R)
->*The (J)>__R__>S>D loop, getting RSD into place – all of which are relatively frequent!*
+>The (J)>__R__>S>D loop, getting RSD into place - all of which are relatively frequent!
 
 ```
 q w f J g y u i o p
@@ -62,7 +62,7 @@ q w f J g y u i o p
 ```
 
 ###tarmak4 (O)
->*The J>Y>__O__>;>P loop, getting O in place and finalizing the big loop*
+>The J>Y>__O__>;>P loop, getting O in place and finalizing the big loop
 
 ```
 q w f P g J u i Y ;
@@ -70,8 +70,10 @@ q w f P g J u i Y ;
   z x c v b k m
 ```
 
-###colemak (I)
->The L>U>I self-contained loop - step 5 is simply the full Colemak!
+###tarmak5/colemak (I)
+>The L>U>__I__ self-contained loop - step 5 is simply the full Colemak!
+
+`tarmak5` and `colemak` are subtly different: the former only changes your letter key positions, whereas the latter changes your whole keyboard layout to the US variant and remaps caps lock to backspace.
 
 ```
 q w f p g j L U y ;

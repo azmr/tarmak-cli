@@ -73,7 +73,35 @@ keycode 39 = o\n
 # Bottom Row:\n
 keycode 49 = k\n
 \n
-######################")
+######################"
+"\n
+######################\n
+# Tarmak 5\n
+######################\n
+\n
+# Top Row:\n
+keycode 18 = f\n
+keycode 19 = p\n
+keycode 20 = g\n
+keycode 21 = j\n
+keycode 22 = l\n
+keycode 23 = u\n
+keycode 24 = y\n
+keycode 25 = semicolon colon\n
+# Middle Row:\n
+keycode 31 = r\n
+keycode 32 = s\n
+keycode 33 = t\n
+keycode 34 = d\n
+keycode 36 = n\n
+keycode 37 = e\n
+keycode 38 = i\n
+keycode 39 = o\n
+# Bottom Row:\n
+keycode 49 = k\n
+\n
+######################"
+)
 
 baseMap=$(cat /etc/vconsole.conf | grep -oPi "(?<=keymap=)\S+")
 if [ -z "$baseMap" ]
