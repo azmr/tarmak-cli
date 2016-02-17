@@ -95,12 +95,12 @@ templateConfirmation(){
 templateConfirmation
 
 oldPwd=$(pwd)
-targetDir="$(cd ${template/$baseMapFile/""}/.. && pwd)/colemak"
+targetDir="$(cd $(dirname $template)/.. && pwd)/colemak"
 cd $oldPwd
 n="
 "
 targetConfirmation(){
-	read -p "Target for new keymaps is $targetDir - is this ok? (y/n): " confirm
+	read -p "Target directory for new keymaps is $targetDir - is this ok? (y/n): " confirm
 	case "$confirm" in
 		y|Y|[Yy][Ee][Ss] ) echo "Confirmed. Continuing...";;
 		* ) read -p "Not confirmed. Enter a directory to use or press ^C (CTRL+C) to cancel:$n> " targetDir; targetConfirmation;;
