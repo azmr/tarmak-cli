@@ -97,3 +97,6 @@ This script should work on most hardware running UNIX, and certainly shouldn't d
 Use at your own risk.
 
 If you have any issues, please let me know.
+
+## Related Scripts
+I have also made a script to swap the shift behaviour for numbers/symbols and/or []/{} for UNIX keymaps called [shift-swap](https://github.com/azmr/shift-swap)
