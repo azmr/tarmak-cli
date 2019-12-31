@@ -78,7 +78,7 @@ q w f P g J u i Y ;
 ```
 q w f p g j L U y ;
  a r s t d h n e I o
-  z c v b k m
+  z x c v b k m
 ```
 
 To find these again while using the CLI, enter **`$ cat steps.txt`** while in the tarmak-cli directory.

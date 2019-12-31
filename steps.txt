@@ -21,4 +21,4 @@ q w f P g J u i Y ;
 colemak (I) - "The L>U>I self-contained loop - step 5 is simply the full Colemak!"
 q w f p g j L U y ;
  a r s t d h n e I o
-  z c v b k m
+  z x c v b k m
