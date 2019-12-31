@@ -59,7 +59,7 @@ keycode 19 = p
 keycode 20 = g
 keycode 21 = j
 keycode 24 = y
-keycode 25 = semicolon
+keycode 25 = semicolon colon
 # Middle Row:
 keycode 31 = r
 keycode 32 = s
@@ -72,3 +72,30 @@ keycode 39 = o
 keycode 49 = k
 
 ######################
+
+######################
+# Tarmak 5
+######################
+
+# Top Row:
+keycode 18 = f
+keycode 19 = p
+keycode 20 = g
+keycode 21 = j
+keycode 22 = l
+keycode 23 = u
+keycode 24 = y
+keycode 25 = semicolon colon
+# Middle Row:
+keycode 31 = r
+keycode 32 = s
+keycode 33 = t
+keycode 34 = d
+keycode 36 = n
+keycode 37 = e
+keycode 38 = i
+keycode 39 = o
+# Bottom Row:
+keycode 49 = k
+
+######################"
